@@ -35,6 +35,15 @@
   }
 {% endif %}
 
+@font-face {
+  font-family: 'proxima-nova-condensed';
+  src: url('proximanovacond-sbold-webfont.eot');
+  src: url('proximanovacond-sbold-webfont.eot?iefix') format('eot'),
+       url('proximanovacond-sbold-webfont.woff') format('woff'),
+       url('proximanovacond-sbold-webfont.ttf') format('truetype'),
+  font-weight: normal;
+  font-style: normal;
+  }
 
 
 /**
@@ -1738,3 +1747,198 @@ a.btn:hover{
   line-height: 2;
   color: red;
 }
+
+/* Navigation from TBI main site */
+#floatingNav-push {
+  height: 100px;
+  width: 100%; }
+
+#nav-wrapper {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  border-bottom: 2px solid black;
+  left: 0px; }
+
+#hoverNav {
+  margin-top: 2px;
+  position: relative;
+  width: 940px;
+  padding: 15px 30px;
+  left: 50%;
+  margin-left: -500px;
+  border-bottom: 2px solid gray;
+  background-color: #e6e6e6; }
+  #hoverNav .two {
+    margin-top: -15px;
+    padding-top: 15px;
+    height: 140px; }
+  #hoverNav .selected a {
+    color: #c68f2b; }
+  #hoverNav a {
+    display: block;
+    margin: 7px 0 0 0;
+    color: inherit;
+    font-size: 16px; }
+    #hoverNav a.punchy_link {
+      font-size: 14px;
+      margin: 3px 0 0 0;
+      letter-spacing: 0;
+      color: #c68f2b;
+      font-weight: 600; }
+  #hoverNav .left {
+    float: left;
+    width: 190px;
+    margin-right: 21px; }
+
+#floatingNav .widen, #hoverNav .widen {
+  width: 150px; }
+
+#floatingNav .two {
+    float: left;
+    padding: 0 20px;
+}
+
+
+#floatingNav {
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  height: 80px;
+  width: 980px;
+  padding: 0 20px;
+  z-index: 100;
+  background-color: white;
+  letter-spacing: 1px;
+  position: relative;
+  left: 50%;
+  margin-left: -389px; }
+  #floatingNav .right {
+    width: 240px; }
+  #floatingNav .selected .selection_indicator {
+    padding: 7px 0 14px 0;
+    border-color: #c98f08;
+    border-style: solid;
+    border-width: 4px 0 4px 0; }
+  #floatingNav .selection_indicator {
+    padding: 11px 0 10px 0; }
+  #floatingNav li {
+    overflow: hidden;
+    list-style: none;
+    margin-top: 20px; }
+  #floatingNav a {
+    color: inherit; }
+    #floatingNav a:hover {
+      text-decoration: none; }
+  #floatingNav h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    margin: inherit;
+    margin-left: 0;
+    margin-bottom: 2px;
+    line-height: 18px;
+    letter-spacing: 1px; }
+  #floatingNav .account_functionality {
+    padding: 20px 0 2px 0; }
+    #floatingNav .account_functionality .first {
+      margin-right: 5px; }
+    #floatingNav .account_functionality .last {
+      margin-left: 5px; }
+    #floatingNav .account_functionality a {
+      display: inline;
+      text-transform: none; }
+      #floatingNav .account_functionality a:hover {
+        text-decoration: underline; }
+  #floatingNav .search {
+    float: right;
+    margin: 0; }
+    #floatingNav .search input {
+      width: 198px;
+      margin: 0;
+      padding: 5px 10px 4px 30px; }
+
+    h1, h2, h3, h4, h5, button .btn2, .skinned .btn2 {
+      font-family: "proxima-nova-condensed";
+      letter-spacing: 1px; }
+
+    h2.italic, h3.italic {
+      font-family: inherit; }
+
+    button .btn2, .skinned .btn2 {
+      font-weight: regular; }
+
+    .event_type_label {
+      font-family: "proxima-nova-condensed"; }
+
+    #floatingNav {
+      font-family: "proxima-nova-condensed"; }
+
+    #hoverNav a {
+      font-family: "proxima-nova-condensed"; }
+
+    .square .type, .square .title, .square .subtitle, .square .date, .featured_object .type, .featured_object .title, .featured_object .subtitle, .featured_object .date, .event .type, .event .title, .event .subtitle, .event .date, .events .type, .events .title, .events .subtitle, .events .date, .expanded_event_summary .type, .expanded_event_summary .title, .expanded_event_summary .subtitle, .expanded_event_summary .date, .store_promotion_summary .type, .store_promotion_summary .title, .store_promotion_summary .subtitle, .store_promotion_summary .date, .collection .type, .collection .title, .collection .subtitle, .collection .date, .simplified_story_summaries .type, .simplified_story_summaries .title, .simplified_story_summaries .subtitle, .simplified_story_summaries .date, #flyout .type, #flyout .title, #flyout .subtitle, #flyout .date {
+      font-family: "proxima-nova-condensed"; }
+
+    .search a {
+      font-family: "proxima-nova-condensed"; }
+
+    .punchy_link {
+      font-family: "proxima-nova-condensed"; }
+
+    .daymonth, .day_of_month, table.calendar th.current {
+      font-family: "proxima-nova-condensed"; }
+
+    .blog_post_summary {
+      font-family: "proxima-nova-condensed"; }
+
+    .icalendar p {
+      font-family: "proxima-nova-condensed"; }
+
+    a#more_events {
+      font-family: "proxima-nova-condensed"; }
+
+    #flyout a.show_more {
+      font-family: "proxima-nova-condensed"; }
+    #flyout .dismiss {
+      font-family: "proxima-nova-condensed"; }
+
+    .events_filter li {
+      font-family: "proxima-nova-condensed"; }
+
+    .email_subscribe a {
+      font-family: "proxima-nova-condensed"; }
+
+    .connect a {
+      font-family: "proxima-nova-condensed"; }
+
+    .event_times .date {
+      font-family: Georgia, serif; }
+
+    .comments .form a.button {
+      font-family: "proxima-nova-condensed"; }
+
+    .row.bottom a {
+      font-family: "proxima-nova-condensed"; }
+
+    .filed_under li {
+      font-family: "proxima-nova-condensed"; }
+
+    body.dispatches .next .link {
+      font-family: "proxima-nova-condensed"; }
+
+    body.stories.index_page .neighborhoods {
+      font-family: "proxima-nova-condensed"; }
+
+    body.read .column_type_summary .title {
+      font-family: "proxima-nova-condensed"; }
+
+    body.columns h5 {
+      font-family: "proxima-nova-condensed"; }
+
+    #footer {
+      font-family: "proxima-nova-condensed"; }
+      #footer .feedback a {
+        font-family: "proxima-nova-condensed"; }
