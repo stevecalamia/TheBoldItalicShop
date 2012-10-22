@@ -1,0 +1,190 @@
+body.clips
+
+  h2
+    font-weight: normal
+  h2
+    font-size: 28px
+
+  // Common Clips Controller Style
+  .hosted
+    text-transform: uppercase
+  .right
+    h3
+      a
+        color: $ember_black
+  .event_times
+
+  .event_price
+    font:
+      style: italic
+      size: 22px
+  .event_times, .event_price, .event_tickets
+    margin-bottom: 4px
+  .add_to_calendar
+    font-size: 11px
+
+
+  .subSection.tickets
+    p
+      margin-bottom: 0
+
+  // Clips Index Page
+  &.index_page
+    ul.clips
+      +grid-width(3, 12)
+      .links
+        text-align: right
+
+  // Clips Show Page
+  .merchant_details
+    margin-bottom: 4px
+    h4
+      margin: 12px 0 2px 0
+      padding: 0
+  .map
+    margin-top: 12px
+  .own_a_piece
+    h4
+      margin-bottom: 0
+  .credit
+    color: $credit_color
+    +small_text
+  .edit_links
+    margin: 4px 10px 0 0
+    overflow: hidden
+  .no_stories
+    color: $deemphasized_text_color
+    font-style: italic
+  .comments, .run_yr_mouth
+    +alpha
+  .pullquote
+    +clearfix
+    strong
+      background-color: transparent
+    background: transparent image_url("pullquote.png") no-repeat top left
+    color: $ember_dark_gray
+    font-style: italic
+    margin: 12px 0px 8px 0
+    padding-left: 26px
+    p
+      margin-bottom: 0
+    span
+      float: right
+
+  &.edit_page
+    .title
+      input[type=text]
+        font-size: 60px
+    .aside
+      textarea
+        width: 220px
+        height: 70px
+    .center
+      .figure
+        margin-bottom: 6px
+        img
+          padding-bottom: 6px
+      textarea
+        width: 450px
+    .featured
+      input[type="checkbox"]
+        margin-left: 0
+        padding-left: 0
+
+  &.edit_page .mainContent .event
+    .start_time, .end_time
+      +clearfix
+    .columns
+      .left_column
+        input, textarea
+          +input-width(3,12)
+        textarea
+          height: 60px
+      .right_column
+        textarea
+          height: 60px
+
+
+  .clip_synopsis
+    img
+      margin-bottom: 8px
+    .title
+      font:
+        size: 20px
+        family: Arial Narrow, Arial, Sans-Serif
+        weight: bold
+      text-transform: uppercase
+      margin-bottom: 4px
+    .desc
+      font:
+        size: 13px
+      color: $ember_dark_gray
+    a
+      color: $ember_mustard
+
+  .event.tbi
+    .credit
+      margin-bottom: 12px
+    .description
+      p
+        font-size: 13px
+        color: $ember_black
+    .event_tickets
+      float: right
+    li.clip
+      border-top: 0
+    .featured_event
+      .box
+        margin-bottom: 12px
+
+  #editorbar
+    .left_content
+      width: 550px
+      .version
+        width: 330px
+  .additional_images
+    h4
+      margin-bottom: 4px
+    ul
+      margin: 4px 0
+      li
+        margin-bottom: 4px
+        display: inline-block
+        vertical-align: middle
+        width: 30%
+        text-align: center
+        span.image
+          display: block
+          height: 100px
+          overflow: hidden
+        span.delete_link
+          display: block
+  .organization
+    .scrollable
+      position: relative
+      overflow: hidden
+      width: 100%
+      margin-top: 4px
+      cursor: pointer
+      .items
+        top: 50%
+        width: 20000em
+        position: absolute
+        &> div
+          margin: 0
+          text-align: center
+    .nav
+      width: 100%
+      text-align: center
+      background-color: #E6E6E6
+      .left, .right
+        float: none
+      .disabled
+        visibility: hidden
+    .credit
+      text-align: right
+
+  &.edit_page
+    textarea#event_description
+      width: 600px
+

@@ -1,0 +1,61 @@
+.comments
+  #comment_copy, .buttons
+    margin-right: 0 !important
+    clear: both
+
+.clips
+  .run_yr_mouth
+    +grid(8,12)
+    .title
+      :width 100%
+  .comments
+    +grid(8,12)
+
+.run_yr_mouth
+  +grid(9,12)
+  +alpha
+  overflow: visible !important
+  .please_like_me
+    margin-top: 6px
+    .click_me
+      float: right
+      width: 107px
+
+.please_like_me
+  overflow: visible !important
+
+  .sidebar_widget
+    float: left
+    margin-right: 33px
+    &.right
+      margin-right: 0 !important
+
+  .spacer
+    :width 100%
+    :height 6px
+
+.blog_excerpt
+  margin-bottom: 25px
+  .run_yr_mouth
+    margin-top: 25px
+
+.email_me
+  width: 75px
+  height: 20px
+  background-image: image_url("email_tbi.png")
+  background-repeat: no-repeat
+  &:hover, &.on
+    background-position: 0 -20px
+
+.email_this
+  overflow: hidden
+  h3
+    border-top: 1px solid $ember_black
+    padding-top: 6px
+  .summary
+    p
+      float: left
+      width: 50%
+    &> a
+      float: right
+      width: 50%

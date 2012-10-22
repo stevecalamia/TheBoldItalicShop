@@ -1,0 +1,47 @@
+.featured_object
+  position: relative
+  min-height: 375px
+  a
+    color: white
+    &:hover
+      text-decoration: none
+  .callout
+    width: 215px
+    height: 285px
+    position: absolute
+    top: 35px
+    left: 660px
+    padding: 15px 55px 15px 30px
+    background: transparent image_url('featured_object_event_callout_background.png') no-repeat top left
+  &.blog_post .callout
+    background-image: image_url('featured_object_blog_post_callout_background.png')
+  &.event
+    .callout
+      background-image: image_url('featured_object_event_callout_background.png')
+  &.store_promotion .callout
+    background-image: image_url('featured_object_store_promotion_callout_background.png')
+  .type
+    padding: 0 0 5px
+    font-size: 11px
+    font-weight: 300
+    text-transform: uppercase
+    letter-spacing: 1px
+  .title, .subtitle, .sponsorship
+    padding: 0 0 10px
+  .title
+    font-size: 28px
+    font-weight: 600
+    line-height: 26px
+    padding-bottom: 14px
+    .price
+      font-size: 32px
+      font-family: Georgia, serif
+      font-style: normal
+      font-weight: 400
+  .subtitle
+    font-size: 22px
+    font-weight: 100
+    padding-bottom: 9px
+  p
+    line-height: 1.2em
+

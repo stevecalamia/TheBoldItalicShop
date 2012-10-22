@@ -1,0 +1,437 @@
+@import compass/utilities/lists.scss
+@import compass/utilities/links.scss
+@import compass/utilities/sprites.scss
+@import compass/css3
+@import compass/layout.scss
+@import reset.sass
+@import grid.sass
+
+///////////////////////////////////////
+////////// Ember Style Guide //////////
+///////////////////////////////////////
+
+// Base colors
+$ember_mustard: #C68F2B
+$ember_red: #ff3a00
+$ember_black: black
+$ember_white: white
+$ember_dark_gray: #8A8C8E
+$ember_medium_gray: #C7C8CA
+$ember_light_gray: #cccccc
+$ember_extra_light_gray: #eeefee
+
+// Links
+$standard_link_color: $ember_mustard
+$navigation_link_color: $ember_medium_gray
+$footer_link_color: $ember_black
+
+// Fonts
+$body_font_family: Georgia, Times New Roman, Times, serif
+
+//// Headings
+$headline_font_family: "proxima-nova-condensed"
+
+// Define element colors in terms of base colors
+$inverse_link_color: #333333
+$credit_color: #888888
+$byline_color: #333333
+$clip_description_color: $ember_dark_gray
+$button_bg_color: $ember_light_gray
+$button_bg_hover_color: $ember_light_gray
+$deemphasized_label_color: $ember_medium_gray
+$deemphasized_text_color: $ember_medium_gray
+
+a
+  color: $standard_link_color
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+@mixin navigation_link
+  color: $navigation_link_color
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    color: $ember_mustard
+
+a.navigation_link
+  +navigation_link
+
+@mixin small_text
+  font-size: 11px
+  line-height: 15px
+
+.small_text
+  +small_text
+
+.punchy_link
+  color: $ember_mustard
+  font-weight: 600
+  font-size: 14px
+  text-transform: uppercase
+  letter-spacing: 1px
+
+@mixin mustard-box
+  border: 1px solid $ember_mustard
+  background-color: $ember_light_gray
+  +rounded-corners(6px)
+  padding: 9px
+
+@mixin new_clearfix
+  &:after
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+  html &, *:first-child + html &
+    zoom: 1
+
+@mixin selectable_LIs
+  li
+    font-size: 18px
+    padding: 5px 0
+    height: 26px
+    a
+      color: black
+      padding-left: 18px
+      background: transparent image_url('unselected-list-style-image.png') no-repeat left center
+      &:hover
+        text-decoration: none
+      &.selected
+        position: relative
+        font-weight: bold
+        background-image: image_url('selected-list-style-image.png')
+
+.bold
+  font-weight: bold
+
+.italic
+  font-style: italic
+
+.highlight
+  background-color: $ember_extra_light_gray
+
+.toobig
+  color: red
+
+#map_canvas
+  width: 220px
+  height: 220px
+
+///////////////////////////////////////
+////////// Ember Sass Mixins //////////
+///////////////////////////////////////
+
+@import navigation.sass
+@import flyout.sass
+@import account.sass
+@import form.sass
+@import rounded_corners.sass
+@import buttons.sass
+@import calendar.sass
+@import clips.sass
+@import event_summaries.sass
+@import editable.sass
+@import flaggings.sass
+@import ui.autocomplete.sass
+@import stories.sass
+@import writers.sass
+@import footer.sass
+@import search.sass
+@import jquery-ui-lightness-1.7.2.sass
+@import bad_browser.sass
+@import editor_bar.sass
+@import mini_infowindow.sass
+@import tables.sass
+@import clip_form.sass
+@import article_editor.sass
+@import comments.sass
+@import pagination.sass
+@import jscrollpane.sass
+@import the_bold_italic_shop.sass
+@import filters.sass
+@import share_this.sass
+@import email_template_editor.sass
+@import squares.sass
+@import featured_objects.sass
+@import blog_posts.sass
+@import store_promotions.sass
+@import event_type_label.sass
+
+h1, h2, h3, h4, h5
+  text-transform: uppercase
+  font-family: $headline_font_family
+  font-weight: 600
+  a
+    color: $ember_black
+    &:hover
+      color: $ember_black
+  span
+    color: $ember_medium_gray
+
+h1, h2, h3, h4, p
+  margin: 4px 0 10px 0
+
+// Page headings
+h1
+  font-size: 42px
+  line-height: 60px
+
+// Story sub-titles
+h2
+  font-size: 28px
+  line-height: 34px
+
+// Section headings
+h3
+  font-size: 24px
+  line-height: 24px
+
+// Section sub-titles
+h4
+  font-size: 18px
+  line-height: 18px
+  padding-bottom: 5px
+  border-bottom: 2px solid black
+
+  p
+    display: inline
+    font-size: 12px
+    font-weight: 600
+    text-rendering: optimizeLegibility
+
+  em
+    color: $ember_mustard
+    font-style: normal
+
+h5
+  font-size: 14px
+  line-height: 14px
+
+h3.italic
+  font-family: $body_font_family
+  text-transform: none
+  font:
+    style: italic
+    weight: normal
+  line-height: 22px
+  margin: 0
+
+body
+  font-family: $body_font_family
+  font-size: 14px
+  margin-top: 0
+  background-color: $ember_white
+  -webkit-text-size-adjust: none
+
+#page
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  position: relative
+
+#title
+  +clearfix
+
+$rounded_corner_radius: 4px
+
+.quiet
+  color: $ember_medium_gray
+  font-style: italic
+
+.light
+  color: $ember_medium_gray
+
+.clearfix
+  +clearfix
+
+.clear
+  clear: both
+
+.error
+  color: $ember_red
+
+.flash
+  background-color: $ember_extra_light_gray
+  font-family: helvetica neue, helvetica, arial
+  font-size: 36px
+  line-height: 40px
+  position: fixed
+  padding: 20px 15px 10px 15px
+  margin: 0 0 10px 0
+  top: 70px
+  z-index: 10
+  width: 916px
+  display: none
+  border-bottom: 5px solid black
+  .notice
+    color: $ember_mustard
+  .error
+    color: $ember_red
+
+.gray_box
+  margin-top: 30px
+  background-color: #E6E6E6
+  padding: 15px
+
+.alpha
+  margin-left: 0 !important
+
+.omega
+  margin-right: 0 !important
+
+.section, .subSection
+  margin-bottom: 20px
+  +clearfix
+
+.subSection
+  border-top: 2px solid $ember_black
+
+#demo
+  text-align: center
+  padding: 8px
+  border: 5px solid $ember_mustard
+  background: $ember_extra_light_gray
+  width: 954px
+  position: relative
+  left: -10px
+
+#logo
+  text-align: center
+  margin: 10px 0
+
+#mainContent
+  h1
+    margin-top: 10px
+  .main > div
+    border-top: 1px solid black
+    margin-bottom: 30px
+
+.featured_area
+  position: relative
+  left: -$ninesixty_gutter_width
+  top: 0px
+  margin-bottom: 10px
+  #logo
+    position: absolute
+    margin: 20px 0
+    width: 980px
+    top: 5px
+    z-index: 1
+    &.small
+      margin: 10px 0
+
+#rightContent
+  h2
+    font-size: 20px
+    padding: 4px 0
+  .writer
+    p
+      font:
+        size: 12px
+      color: $ember_medium_gray
+
+.spinnerSprite
+  background: transparent image_url("spinner.gif") no-repeat left center
+  min-height: 16px
+  min-width: 16px
+  padding-left: 20px
+  font-variant: small-caps
+
+.separator
+  height: 0
+  margin: 10px 0 3px 0
+  border: 1px solid $ember_light_gray
+
+span.separator
+  height: inherit
+  margin: inherit
+  border: 0
+  color: $ember_medium_gray
+
+a.ellipsis
+  color: inherit
+
+a.ellipsis:hover
+  color: $standard_link_color
+
+.hidden
+  display: none
+
+a.selected
+  color: $ember_black
+
+.rss
+  float: right
+
+.icalendar
+  +clearfix
+  margin: 12px 0
+  img, ul
+    float: left
+  img
+    margin-right: 20px
+  ul
+    margin-top: 4px
+    width: 168px
+  li
+    float: left
+    width: 75px
+  p
+    font-size: 16px
+
+.ui-dialog
+  color: $ember_black
+  .ui-dialog-titlebar
+    background: none
+  .ui-dialog-titlebar-close
+    width: auto
+  .ui-icon
+    width: auto
+
+.ui-icon.ui-icon-closethick
+  background: none
+  color: $ember_mustard
+  text-indent: 0
+  font-weight: normal
+  font-size: 11px
+  text-transform: capitalize
+
+.photo_credit
+  color: $credit_color
+  font-style: italic
+
+// Import controller-specific styles
+@import controllers/about.sass
+@import controllers/admin/ads.sass
+@import controllers/admin/analytics.sass
+@import controllers/admin/flaggings.sass
+@import controllers/admin/found_locals.sass
+@import controllers/admin/homepage_states.sass
+@import controllers/admin/collections.sass
+@import controllers/admin/column_types.sass
+@import controllers/admin/stories.sass
+@import controllers/admin/users.sass
+@import controllers/blog.sass
+@import controllers/clips.sass
+@import controllers/columns.sass
+@import controllers/dispatches.sass
+@import controllers/email_address_verification_requests.sass
+@import controllers/events.sass
+@import controllers/found_locals.sass
+@import controllers/home.sass
+@import controllers/merchant_dashboard.sass
+@import controllers/newsletter.sass
+@import controllers/password.sass
+@import controllers/password_reset_requests.sass
+@import controllers/read.sass
+@import controllers/stories.sass
+@import controllers/terms_of_service.sass
+@import controllers/users.sass
+@import controllers/user_stories.sass
+@import controllers/work_with_us_page.sass
+@import controllers/writer_dashboard.sass
+
+@import typekit.sass

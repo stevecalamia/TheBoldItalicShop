@@ -1,0 +1,30 @@
+#flag_dialog
+  width: 400px
+  .columns
+    margin: 10px 0 20px 0
+    +clearfix
+    .reason
+      float: left
+    .description
+      float: right
+      textarea
+        width: 200px
+        height: 80px
+  .buttons
+    text-align: right
+    margin-top: 10px
+    .errors
+      color: $ember_red
+      font-size: 14px
+      float: left
+      text-align: left
+.flag, .hide
+  font-family: $headline_font_family
+  text-transform: uppercase
+  font-size: 12px
+
+.flagged
+  background-color: $standard_link_color
+  color: $ember_white
+  padding: 4px
+

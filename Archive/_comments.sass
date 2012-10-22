@@ -1,0 +1,56 @@
+.comments
+  +grid(9,12)
+  +alpha
+  +omega
+  .section
+    clear: both
+  .title, .comment .commenter
+    +grid(3,12)
+    width: 200px
+    +alpha
+  .body
+    +grid(6,12)
+    +omega
+  .timestamp
+    +small_text
+  .form
+    textarea
+      width: 470px
+      height: 120px
+      float: right
+      margin-left: 50px
+      margin-right: 10px
+      margin-bottom: 4px
+    .buttons, .saving
+      float: right
+      margin-right: 6px
+      height: 31px
+    a.button
+      font-size: 18px
+      text-transform: uppercase
+      &:hover
+        text-decoration: none
+
+  .form
+    margin-top: 5px
+    margin-bottom: 20px
+  .all
+    +grid(9,12)
+    +alpha
+    +omega
+    border-top: 0
+    > div
+      +clearfix
+      margin: 10px 0 20px 0
+    &:empty
+      border-top: 0
+      margin-bottom: 0
+  .flag
+    margin: 6px 0
+  .commenter
+    h3
+      font-size: 16px
+
+.clips
+  .all
+    +grid(8,12)

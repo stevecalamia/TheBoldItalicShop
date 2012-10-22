@@ -1,0 +1,102 @@
+div.search
+  margin: 10px 0
+  position: relative
+  a
+    position: absolute
+    top: 7px
+    right: 15px
+    text-transform: uppercase
+    font-size: 18px
+    font-weight: 600
+    &:hover
+      text-decoration: none
+  input
+    width: 190px
+    font-size: 14px
+    position: relative
+    margin-right: 20px
+    top: 2px
+    height: 16px
+    padding: 12px 10px 8px 30px
+    border: 1px solid $ember_medium_gray
+    background: transparent url('magnifying_glass_icon.png') no-repeat 10px center
+    &:focus
+      outline: none
+  &.with_button
+    margin: 0
+    a
+      top: 9px
+      color: $ember_mustard
+      right: 0
+    input
+      width: 170px
+      background: none
+      padding: 12px 10px 11px 13px
+
+body.search
+
+  .event_type_label
+    .tbi_event, .featured_event
+      right: 0%
+
+  a
+    color: inherit
+    &:hover
+      text-decoration: none
+
+  a.reset
+    position: relative
+    top: 5px
+
+  .gray_box
+    margin-top: 42px
+    padding: 20px
+
+  h4
+    margin-bottom: 0
+    margin-top: 20px
+
+  h5
+    margin: 15px 0 3px
+  hr
+    padding: 0
+    margin: 0
+    background-color: $ember_dark_gray
+    height: 1px
+    border: none
+
+  .filter
+
+    .punchy_link
+      font-size: 12px
+
+    .categories_selector
+      overflow: hidden
+
+    +selectable_LIs
+
+  .result
+    padding: 13px 0
+    .text
+      float: left
+      width: 370px
+    .title
+      font-size: 20px
+      font-weight: 600
+      line-height: 1em
+    .date
+      padding-bottom: 3px
+    .type
+      font-size: 11px
+      color: $ember_dark_gray
+      text-transform: uppercase
+      margin: 0px 0 5px
+    .month, .day
+      font-size: 18px
+      text-transform: uppercase
+    .description
+      font-size: 14px
+    img
+      float: right
+      width: 220px
+      height: 140px

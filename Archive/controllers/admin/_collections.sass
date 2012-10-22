@@ -1,0 +1,54 @@
+.collection
+  +clearfix
+  border-bottom: 1px solid black
+  padding: 15px 0 30px 0
+  &.last
+    border-bottom: 1px dotted $ember_light_gray
+
+.collection_title
+  .title
+    font-size: 20px
+    margin-bottom: 15px
+    font-weight: 600
+  .description
+    font-size: 14px
+
+.home
+  .collection.last
+    border-bottom: none
+
+.admin__collections, .stories, .home
+  label, input
+    display: block
+  input, textarea
+    margin-bottom: 20px
+  textarea
+    height: 60px
+
+  th.actions
+    width: 100px
+  .admin a
+    display: block
+
+  .manage_collection_memberships_form
+    margin-bottom: 20px
+
+  .collection_memberships
+    +clearfix
+
+  .edit_collection_memberships
+    +clearfix
+    +grid(2,12)
+    float: left
+    margin-left: 0
+    margin-bottom: 20px
+
+  .simplified_story_summaries
+    height: 140px
+    img
+      width: 140px
+      height: 90px
+    .title
+      font-size: 16px
+      line-height: 15px
+      margin-top: 5px

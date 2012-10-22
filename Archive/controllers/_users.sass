@@ -1,0 +1,225 @@
+#new_user_form
+  textarea, input[type="text"], input[type="file"], input[type="password"]
+    display: block
+
+#new_user
+  position: relative
+  form
+    input, label
+      margin: 10px 0
+    input[type="text"], input[type="password"]
+      width: 160px
+    input[type="checkbox"]
+      float: left
+    .buttons, .saving
+      position: absolute
+      right: -10px
+      bottom: -3px
+    .terms_of_service
+      position: absolute
+      bottom: -40px
+      width: 66%
+      font-size: 11px
+
+#new_login
+  position: relative
+  display: block
+  input[type=text], input[type=password]
+    width: 160px
+  .buttons, .saving
+    position: absolute
+    right: -10px
+    bottom: 0px
+  p:first-child
+    margin-top: 0
+  p.rememberme
+    input
+      display: inline
+    float: left
+    label
+      padding-right: 8px
+
+p.forget
+  text-align: left
+  margin: 0
+
+#sign_up_form, #sign_in_form
+  padding: 10px 30px 30px 30px
+  position: relative
+  .signupinfo
+    float: left
+    padding-right: 18px
+    width: 248px
+    .member
+      li
+        padding-left: 64px
+        height: 64px
+        color: $ember_dark_gray
+        strong
+          color: $ember_black
+          font-weight: normal
+        background: transparent image_url("ooh.png") no-repeat top left
+        &.ooh
+          background-image: image_url("ooh.png")
+        &.aah
+          background-image: image_url("ahh.png")
+        &.woa
+          background-image: image_url("woa.png")
+  a
+    color: $ember_mustard
+  .alpha
+    font-size: 12px
+  .signupaction
+    width: 100%
+
+body.users.new_page, body.users.create_page, body.identities__facebook_sessions
+  .left
+    h2
+      color: $ember_mustard
+  .container
+    +grid(9,12)
+    +alpha
+    padding-top: 10px
+    .center
+      +omega
+
+.connect
+  border-bottom: 1px solid black
+  margin-bottom: 10px
+  a
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 20px
+
+.connect, .signupinfo, .action
+  p
+    color: $ember_dark_gray
+  width: 100%
+  .ready
+    width: 205px
+  .mustard
+    color: $ember_mustard
+  .black
+    color: $ember_black
+
+.signupaction
+  float: left
+  width: 340px
+  .gray
+    color: $ember_dark_gray
+  #user_accept_terms_of_service
+    margin-top: 0
+  p
+    margin-left: 0
+
+.account
+  .signinbar
+    margin-bottom: 0px
+    ul
+      +horizontal-list(9px)
+    li
+      padding-top: 6px
+      font-size: 12px
+  div.signin
+    margin-top: 18px
+  padding-bottom: 8px
+  .links
+    font-size: 11px
+    line-height: 15px
+
+body.users.show_page, body.found_locals.show_page
+  li.clip
+    .summary
+      h3
+        font-size: 24px
+        margin-bottom: 0
+      p
+        margin-bottom: 10px
+  .rss
+    margin-top: 6px
+  .admin
+    +grid(3,12)
+    +omega
+    background-color: $ember_light_gray
+    padding: 8px
+    margin-right: -16px
+    h5
+      margin-bottom: 6px
+    span
+      display: block
+
+body.users.edit_page
+  label
+    display: block
+
+body.identities__facebook_sessions, body.users.create_page
+  #new_user_form
+    input, label
+      margin: 10px 0
+  .section.container
+    width: 560px
+    .left
+      p
+        margin-right: 10px
+  .section.aside.right.gray_form
+    width: 340px
+    padding: 20px 0 0 20px
+    img
+      float: left
+    .names
+      float: left
+      width: 219px
+      margin-left: 20px
+    .tos
+      clear: both
+      #user_accept_terms_of_service
+        \+ p
+          padding-left: 10px
+      button
+        margin-right: 14px
+  .errorExplanation
+    h4
+      margin-left: 0
+    ul
+      margin-bottom: 10px
+
+#user_accept_terms_of_service
+  \+ p
+    padding-left: 24px
+
+.found_local_info
+  p
+    font-weight: bold
+    span
+      font-weight: normal
+      color: $ember_dark_gray
+
+  p:first-child
+    margin-top: 10px
+    margin-bottom: 0
+
+p.interview
+  margin-top: 20px
+
+p.oneliner
+  color: $ember_medium_gray
+  font-size: 18px
+  line-height: 24px
+  margin-top: -15px
+  font-family: $body_font_family
+
+h3.oneliner
+  margin-top: -15px
+
+ul.stories + .subsection
+  text-align: right
+  a
+    display: block
+
+li.story
+  .favorite
+    width: 240px
+    float: left
+    .blurb
+      font-weight: normal
+      margin: 0 10px 10px 10px

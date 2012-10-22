@@ -1,0 +1,58 @@
+body.home
+
+  .blog_post_summary .title
+    line-height: 1em
+
+  .header_link
+    color: inherit
+    &:hover
+      text-decoration: none
+
+  .more_stories
+    +clearfix
+  .more_link
+    float: right
+    margin-bottom: 10px
+
+  li.writer
+    +grid-width(2,12)
+    height: 210px
+    img
+      width: 140px
+      height: 165px
+
+  .social_widget_column
+    position: relative
+    .fb_edge_widget_with_comment, .twitter-follow-button
+      position: absolute
+      top: 45px
+    .fb_edge_widget_with_comment
+      left: 210px
+      height: 20px
+      overflow: hidden
+    .twitter-follow-button
+      left: 230px
+
+  .subtitle, .author, .date
+    text-transform: uppercase
+
+  .row
+    margin-bottom: 20px
+    &.bottom
+      padding-bottom: 5px
+      border-bottom: 2px dotted $ember_medium_gray
+      a
+        color: $ember_dark_gray
+
+  .ad
+    margin-bottom: 10px
+
+body.home.privacy_page
+  .mainContent
+    li
+      list-style-type: square
+      margin: 0 0 12px 24px
+
+body.home.about_page
+  h3
+    margin-top: 20px

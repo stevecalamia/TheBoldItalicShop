@@ -1,0 +1,67 @@
+#flyout
+  +clearfix
+  +single-box-shadow(gray, -2px, 2px, 2px, 2px, false)
+  width: 305px
+  z-index: 1
+  background-color: white
+  border: 1px solid black
+  padding: 20px
+  position: absolute
+  right: 0
+  top: -300px
+  -webkit-backface-visibility: hidden
+
+  color: black
+  a
+    color: black
+    &:hover
+      text-decoration: none
+
+  .dismiss
+    position: absolute
+    right: 10px
+    top: 10px
+    cursor: pointer
+    font-weight: bold
+
+  h4
+    border-width: 1px
+    border-color:  black
+    margin-bottom: 0
+    span
+      color: $ember_medium_gray
+
+  a.show_more
+    float: right
+    color: $ember_mustard
+    text-transform: uppercase
+    font-weight: 600
+    position: relative
+    top: 40px
+    margin-left: 15px
+    img
+      position: relative
+      left: 25px
+
+  .title, .subtitle
+    width: 220px
+  .title
+    margin-top: 5px
+    font-size: 18px
+    font-weight: 600
+    line-height: 17px
+    letter-spacing: 0
+    .price
+      font-family: Georgia, serif
+  .subtitle
+    font-size: 16px
+
+  .expanded_story_summary
+    margin: 0
+    height: inherit
+    width: 220px
+    img
+      width: 220px
+      height:  140px
+
+

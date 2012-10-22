@@ -1,0 +1,33 @@
+.newClip
+  .form
+    display: none
+    input[type=text], textarea, select
+      margin-bottom: 6px
+      +input-width(3,12)
+    textarea
+      height: 60px
+    button[type=submit]
+      padding-right: 0px
+      margin-right: -3px
+  .form.selected
+    display: block
+  #clip_start_time, #clip_end_time, #event_start_time, #event_end_time
+    width: 190px
+    margin-right: 4px
+  .image
+    padding: "#{$input_padding_size}px"
+    border: "#{$input_border_size}px" solid $ember_medium_gray
+
+#clip_selector
+  li
+    +clip-title
+    a.icon
+      float: right
+    .clip_appendices
+      display: inline
+      vertical-align: super
+      font-size: 10px
+      .edit_clip_link
+        display: inline
+  input
+    +input-width(3,12)

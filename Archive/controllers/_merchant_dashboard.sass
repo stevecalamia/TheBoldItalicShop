@@ -1,0 +1,105 @@
+body.merchant_dashboard
+
+  .collapsed
+    +new_clearfix
+    overflow: visible
+    position: relative
+    a.collapsible_control
+      text-transform: capitalize
+      margin: 4px 1px 0 10px
+      float: right
+      overflow: hidden
+    > *
+      display: none
+    > :first-child, > a.collapsible_control, > a.collapsible_control + *
+      display: block
+
+  .email
+    margin-top: 40px
+    text-align: right
+  #thankyou_event
+    background: transparent image_url("checkmark.png") no-repeat 0px 4px
+    padding-left: 26px
+
+  #page .header .title
+    font-size: 21px
+    line-height: 28px
+    color: $ember_black
+
+  .subhead
+    font-size: 13px
+    font-style: italic
+    color: $ember_dark_gray
+    margin-bottom: 25px
+
+  .three
+    input[type=text], textarea, select
+      margin-bottom: 6px
+      +input-width(3,12)
+    textarea
+      height: 60px
+    button[type=submit]
+      margin-top: 5px
+
+  .six
+    input[type=text], textarea, select
+      margin-bottom: 6px
+      +input-width(6,12)
+    textarea
+      height: 60px
+
+  .start_time_wrapper input, .end_time_wrapper input
+    width: 190px !important
+    margin-right: 4px
+
+  li.event, li.product
+    overflow: hidden
+    margin: 10px 0
+    padding-bottom: 10px
+    border-bottom: 1px solid $ember_light_gray
+
+    .title
+      font-style: italic
+    .date
+      span.date
+        .month
+          color: $ember_black
+          font-size: 12px
+          display: block
+        .day
+          font-size: 21px
+          line-height: 22px
+          font-style: italic
+      .weekday
+        color: $ember_dark_gray
+        font-variant: small-caps
+      .time
+        color: $ember_dark_gray
+        font-size: 11px
+        line-height: 15px
+    .description, .actions
+      color: $ember_dark_gray
+      font-size: 12px
+      line-height: 15px
+    .buttons, .saving
+      clear: both
+    .errors
+      display: none
+      margin-top: 8px
+      color: $ember_red
+      list-style-type: square
+      font-size: 12px
+
+  .profile_request
+    p, li
+      font-size: 12px
+      color: $ember_dark_gray
+    li
+      margin-left: 20px
+      margin-bottom: 15px
+      list-style-type: inherit
+
+.feature_this_event
+  color: #0BF
+  text-decoration: underline
+  cursor: pointer

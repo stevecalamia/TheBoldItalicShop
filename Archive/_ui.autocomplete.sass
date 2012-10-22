@@ -1,0 +1,53 @@
+.ui-autocomplete
+
+.ui-autocomplete-results
+  overflow: hidden
+  z-index: 99999
+  padding: 1px
+  position: absolute
+
+  ul
+    width: 100%
+    list-style-position: outside
+    list-style: none
+    padding: 0
+    margin: 0
+
+  li
+    margin: 0px
+    padding: 2px 8px
+    cursor: default
+    display: block
+    font: menu
+    font-size: 12px
+    line-height: 16px
+    overflow: hidden
+    border-collapse: collapse
+    background-color: #eee
+
+    &.ui-autocomplete-even
+      background-color: #fff
+
+    &.ui-autocomplete-odd
+      background-color: #eee
+
+    &.ui-autocomplete-state-default
+      background-color: #fff
+      color: #212121
+
+    &.ui-autocomplete-state-active
+      color: #000
+      background: #E6E6E6
+
+    a
+      float: right
+
+
+
+.ui-autocomplete-loading
+  background: white image_url("ui-anim.basic.16x16.gif") right center no-repeat
+
+
+.ui-autocomplete-over
+  background-color: #0A246A
+  color: white

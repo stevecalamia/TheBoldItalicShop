@@ -1,0 +1,60 @@
+body.blog_posts.edit_page
+
+  .floating.button
+    float: right
+
+  .colors
+    +clearfix
+    ul li
+      margin-left: 2em
+      margin-bottom: 1em
+      list-style-type: disc
+
+body.blog_posts
+
+  h2
+    a
+      cursor: default
+      &:hover
+        text-decoration: none
+
+  .header
+    min-height: 100px
+  .title
+    h1
+      margin-bottom: 0
+    p
+      font-size: 16px
+      color: $ember_dark_gray
+  .count
+    margin-bottom: 10px
+  .article
+    +clearfix
+    margin-bottom: 32px
+    .byline
+      div
+        display: inline
+    .date
+      text-transform: titlecase
+      font-size: 13px
+      margin-bottom: 2px
+      color: $ember_medium_gray
+    .copy
+      +clearfix
+      margin-top: 2px
+  .unpublished_article
+    clear: both
+    margin-bottom: 8px
+  .blog_rss
+    margin-bottom: 20px
+  .share
+    +grid(3,12)
+    +alpha
+    img
+      vertical-align: top
+  .comments
+    float: right
+
+  .pagination
+    margin-bottom: 20px
+

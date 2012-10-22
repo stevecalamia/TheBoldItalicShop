@@ -1,0 +1,155 @@
+/*
+  960 Grid System ~ Core CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+
+@import compass/utilities/general/reset.scss
+
+$ninesixty-gutter-width: 20px !default
+
+$ninesixty-grid-width: 960px !default
+
+$ninesixty-columns: 12 !default
+
+$ninesixty-class-separator: "_" !default
+
+=grid-container
+  margin-left: auto
+  margin-right: auto
+  width: $ninesixty-grid-width
+
+=grid-width($n, $cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
+  width: $ninesixty-grid-width / $cols * $n - $gutter-width
+
+=grid-unit-base($gutter-width: $ninesixty-gutter-width)
+  display: inline
+  float: left
+  margin:
+    left: $gutter-width / 2
+    right: $gutter-width / 2
+
+=grid($n, $cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
+  +grid-unit-base($gutter-width)
+  +grid-width($n, $cols, $gutter-width)
+
+=alpha
+  margin-left: 0
+
+=omega
+  margin-right: 0
+
+=grids($cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
+  #{enumerate(".grid", 1, $cols, $ninesixty-class-separator)}
+    +grid-unit-base($gutter-width)
+  @for $n from 1 through $cols
+    .grid#{$ninesixty-class-separator}#{$n}
+      +grid-width($n, $cols, $gutter-width)
+
+=grid-prefix($n, $cols: $ninesixty-columns)
+  padding-left: $ninesixty-grid-width / $cols * $n
+
+=grid-prefixes($cols: $ninesixty-columns)
+  @for $n from 1 through $cols - 1
+    .prefix#{$ninesixty-class-separator}#{$n}
+      +grid-prefix($n, $cols)
+
+=grid-suffix($n, $cols: $ninesixty-columns)
+  padding-right: $ninesixty-grid-width / $cols * $n
+
+=grid-suffixes($cols: $ninesixty-columns)
+  @for $n from 1 through $cols - 1
+    .suffix#{$ninesixty-class-separator}#{$n}
+      +grid-suffix($n, $cols)
+
+=grid-children
+  .alpha
+    +alpha
+  .omega
+    +omega
+
+=grid-move-base
+  position: relative
+
+=grid-move-push($n, $cols)
+  left: ($ninesixty-grid-width / $cols) * $n
+
+=grid-move-pull($n, $cols)
+  left: -($ninesixty-grid-width / $cols) * $n
+
+=grid-push($n, $cols: $ninesixty-columns)
+  +grid-move-base
+  +grid-move-push($n, $cols)
+
+=grid-pull($n, $cols: $ninesixty-columns)
+  +grid-move-base
+  +grid-move-pull($n, $cols)
+
+=grid-movements($cols: $ninesixty-columns)
+  #{enumerate(".push", 1, $cols - 1, $ninesixty-class-separator)},
+  #{enumerate(".pull", 1, $cols - 1, $ninesixty-class-separator)}
+    +grid-move-base
+  @for $n from 1 through $cols - 1
+    .push#{$ninesixty-class-separator}#{$n}
+      +grid-move-push($n, $cols)
+    .pull#{$ninesixty-class-separator}#{$n}
+      +grid-move-pull($n, $cols)
+
+=grid-system($cols: $ninesixty-columns)
+  +grid-container
+  +grids($cols)
+  +grid-prefixes($cols)
+  +grid-suffixes($cols)
+  +grid-children
+  +grid-movements($cols)
+
+=grid-system-complete($cols: $ninesixty-columns)
+  .container#{$ninesixty-class-separator}#{$cols}
+    +grid-system($cols)
+
+body
+  margin: 0
+
+#body-inner-wrapper
+  +grid-container
+  .page
+    +grid(12, 12)
+
+.header
+  +clearfix
+  min-height: 125px
+  .title, .major_section
+    +grid(9,12)
+    +alpha
+
+.one
+  +grid(1,12)
+.two
+  +grid(2,12)
+.three, .aside
+  +grid(3,12)
+.four
+  +grid(4,12)
+.five
+  +grid(5,12)
+.six, .center
+  +grid(6,12)
+.seven
+  +grid(7,12)
+.eight
+  +grid(8,12)
+.nine
+  +grid(9,12)
+.ten
+  +grid(10,12)
+.eleven
+  +grid(11,12)
+.twelve
+  +grid(12,12)
+
+.left
+  +alpha
+.right
+  +omega
+
++sticky-footer(330px, "#page", "#push", "#footer")

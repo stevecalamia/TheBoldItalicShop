@@ -1,0 +1,50 @@
+.event_type_label
+  width: 100%
+  text-transform: uppercase
+  font-weight: 600
+  font-size: 0.8em
+  overflow: hidden
+  letter-spacing: 1px
+  .featured_event, .tbi_event
+    padding: 0.4em 0 0.25em 1em
+    margin: 0
+    width: 100%
+    position: relative
+    right: 4%
+  .featured_event
+    color: black
+    background-color: #e6e6e6
+  .tbi_event
+    color: white
+    background-color: $ember_mustard
+
+.square, .callout
+  .event_type_label
+    .featured_event, .tbi_event
+      position: static
+    text-align: left
+    margin-bottom: 3px
+
+.callout
+  .featured_event, .tbi_event
+    padding: inherit
+    background-color: transparent
+
+.expanded_event_summary
+  .event_type_label
+    position: absolute
+    bottom: 0
+    .tbi_event, .featured_event
+      padding-left: 1.5em
+
+.clips.show_page
+  .event_type_label
+    font-size: 10px
+    margin: 10px 0
+    .tbi_event
+      padding-left: 20px
+
+.day .event_type_label
+  .tbi_event, .featured_event
+    padding-left: 2em
+

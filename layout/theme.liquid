@@ -39,6 +39,7 @@
 
   {{ content_for_header }}
 
+
   {% case settings.header_font %}
   {% when "Rancho, cursive" %}
     <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
@@ -50,8 +51,11 @@
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
   {% endcase %}
 
-  {{ 'style.css' | asset_url | stylesheet_tag }}{% if template contains 'product' and settings.main_image_display == 'Lightbox' %}
-  {{ 'jquery.fancybox-1.3.4.css' | asset_url | stylesheet_tag }}{% endif %}
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova.css' | asset_url | stylesheet_tag }}
+  {% if template contains 'product' and settings.main_image_display == 'Lightbox' %}
+      {{ 'jquery.fancybox-1.3.4.css' | asset_url | stylesheet_tag }}
+  {% endif %}
   {{ 'modernizr.js' | asset_url | script_tag }}
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js' | script_tag }}
   {{ 'jquery.ba-throttle-debounce.min.js' | asset_url | script_tag }}
@@ -122,7 +126,7 @@
 
        _onHoverStateChange:function () {
            var self = this;
-           var f = $.debounce(function () {
+           var f = $.debounce(300, function () {
                if(self.overHoverNav || self.overFloatingNav) {
                    if(!self.shown) {
                        self._animateIn.call(self);
@@ -133,7 +137,7 @@
                        self._animateOut();
                    }
                }
-           }, 300)
+           })
            f();
        },
 

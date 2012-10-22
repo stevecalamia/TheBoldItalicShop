@@ -1,0 +1,45 @@
+#editorbar
+  background: transparent image_url("editorbar.png") no-repeat top left
+  width: 980px
+  height: 49px
+  position: fixed
+  bottom: 0
+  margin-left: -16px
+  z-index: 1
+  .content
+    margin: 8px 21px 0 13px
+    width: 946px
+    .left_content
+      float: left
+      width: 305px
+    .right_content
+      text-align: right
+  .confirm
+    color: white
+  .version, .state
+    color: $ember_white
+    font-size: 12px
+  .version
+    width: 240px
+    float: right
+  .state
+    display: inline-block
+    width: 150px
+    height: 18px
+    padding: 0 6px
+#hide_editorbar
+  float: right
+  position: absolute
+  right: -3px
+  top: -13px
+
+#publish_later_dialog
+  .published_at, .expires_at
+    margin-right: 6px
+  .error
+    margin-top: 10px
+  .publish
+    display: none
+
+#ui-datepicker-div, #ui-timepicker-div
+  z-index: 9999 /* must be > than popup editor (950) */

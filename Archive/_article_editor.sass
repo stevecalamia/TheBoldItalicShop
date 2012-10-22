@@ -1,0 +1,139 @@
+.user_stories.edit_page, .blog_posts.edit_page, .clips.edit_page, .admin__categories.index_page, .admin__found_locals.edit_page, .about.edit_page, .newsletter.edit_page
+  .major_section
+    padding: 10px 0
+    border-bottom: 2px solid
+    margin-bottom: 10px
+    overflow: hidden
+
+  ul.categories
+    li
+      display: inline-block
+      width: 30%
+
+  #video_embedder, #paste_dialog
+    overflow: hidden
+    textarea
+      width: 100%
+      height: 40%
+      margin-bottom: 10px
+      margin-top: 10px
+
+  #video_embedder
+    a.embed
+      float: right
+
+  #paste_dialog
+    a.paste
+      float: right
+
+  #mainContent
+    .copy
+      .rendered
+        > div
+          min-height: 1px
+    .footer
+      overflow: hidden
+      margin: 20px 0
+      padding: 10px 0
+      border-top: 2px solid $ember_light_gray
+      text-align: right
+      .delete, .confirm
+        float: left
+
+  .wym_area_top
+    position: fixed
+    bottom: 11px
+    margin-left: 83px
+    z-index: 2
+    width: 724px
+    background-color: #eee
+    +rounded-corners(3px)
+
+    .wym_section
+      h2
+        font-size: 16px
+
+  .done_hacking
+    display: none
+    z-index: 3
+    bottom: 11px
+    margin-left: 24px
+
+  .wym_dropdown
+    ul
+      border: solid 1px #555
+      border-bottom: none
+
+  .wym_classes.wym_dropdown
+    ul
+      top: -81px
+
+  .wym_containers.wym_dropdown
+    ul
+      top: -59px
+  .wym_tools
+    width: auto
+  .wym_html
+    background-color: #f8f8f8
+  .codemirror_shortcuts
+    float: right
+    font-size: 11px
+    color: #1a1a1a
+
+
+  .image_gallery
+    border-top: 1px solid #aaa
+    margin-top: 10px
+    overflow: auto
+    > div
+      display: inline-block
+      margin: 5px
+      cursor: pointer
+      border: 2px solid white
+      &:hover
+        background-color: #eee
+        border-color: $ember_mustard
+      > div
+        text-align: center
+    .metadata
+      background: #f7f7f7
+      font-size: 11px
+      padding: 3px
+      text-align: left
+      .credit
+        color: $ember_dark_gray
+      .size
+        font-style: italic
+
+
+.user_stories.show_page, .blog_posts, .about, .newsletter, .work_with_us_page
+  .copy .image
+    margin-bottom: 10px
+
+  //WYMeditor exposed classes
+  .one_column
+    +grid(3,12)
+  .two_column
+    +grid(6,12)
+  .three_column
+    +grid(9,12)
+  .first_column
+    +alpha
+    clear: both
+  .last_column
+    +omega
+  .fixed_width
+    font-family: Lucidatypewriter, monospace
+
+.clips.edit_page
+  .wym_area_top
+    position: fixed
+    bottom: 11px
+    margin-left: 0px
+    z-index: 2
+    width: 386px
+    background-color: #eee
+    +rounded-corners(3px)
+
+  .wym_tools_new_3_col, .wym_tools_new_2_plus_1_col, .wym_tools_new_2_plus_1_col, .wym_tools_new_1_plus_2_col, .wym_tools_new_1_col, .wym_containers, .wym_classes
+    display: none

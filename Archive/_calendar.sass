@@ -1,0 +1,30 @@
+table.calendar
+  border-spacing: 0
+  font-family: $headline_font_family
+  th
+    height: 30px
+    font-size: 18px
+    text-transform: uppercase
+    vertical-align: middle
+    a
+      color: $ember_black
+      &:hover
+        text-decoration: none
+        color: $ember_mustard
+  td
+    width: 31px
+    height: 30px
+    border-bottom: 1px solid $ember_dark_gray
+    vertical-align: top
+  .weekend
+    color: $ember_dark_gray
+  .otherMonth
+    color: white
+  .current_day
+    background: transparent image_url("grey_empty_circle.png") no-repeat top left
+    a
+      color: $ember_black
+      font-weight: bold
+  .today
+    background: transparent image_url("grey_circle.png") no-repeat top left
+

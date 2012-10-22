@@ -1,0 +1,101 @@
+body.stories.index_page
+
+  .row
+    margin-bottom: 20px
+
+  .count
+    color: $ember_light_gray
+    a
+      margin-left: 20px
+
+  .neighborhoods
+    font-size: 16px
+    margin-left: 0
+
+    ol
+      float: left
+      padding-left: 0
+      li
+        display: block
+        list-style: none
+
+    .small_text
+      font-size: inherit
+      line-height: inherit
+
+    a
+      color: black
+      display: block
+
+  .search
+    input
+      width: 175px
+    button
+      position: relative
+      top: 2px
+
+  .paginated_section
+    overflow: visible
+
+  .paginated_wrapper
+    position: relative
+    overflow: visible
+    .next, .back
+      position: absolute
+      font-size: 50px
+      cursor: pointer
+    .next
+      right: -1em
+    .back
+      left: -1em
+    .spinner
+      margin-bottom: 13px
+
+  .writers_wrapper
+    height: 250px
+    .next, .back
+      top: 66px
+
+  .writers_outer_wrapper
+    width: 940px
+    height: 260px
+    overflow: hidden
+
+  .writers_inner_wrapper
+    position: relative
+
+  .writers
+    position: absolute
+    height: 275px
+    width: 960px
+
+  .stories_wrapper
+    height: 620px
+    .next, .back
+      top: 225px
+
+  li.writer
+    +grid(2,12)
+    height: inherit
+    img
+      width: 140px
+      height: 164px
+    h4
+      border: none
+      font-weight: 400
+
+body.stories.show_page, body.stories.edit_page
+  ul.writers
+    li.writer
+      height: inherit
+      border-top: 1px solid $ember_light_gray
+
+  .archive
+    font-size: 12px
+
+    .years, .months
+      +grid(1,12)
+    .left
+      margin-left: 0
+    .right
+      margin-right: 0

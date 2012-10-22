@@ -1,0 +1,53 @@
+.stories.index_page
+  .square .type
+    visibility: hidden
+
+.story_summary
+  +grid(3,12)
+  height: 200px
+  margin-bottom: 10px
+  .image
+    margin: 10px 0 5px 0
+  .copy
+    +small_text
+    color: $ember_dark_gray
+
+.expanded_story_summary
+  +grid(4,12)
+  height: 280px
+  margin-bottom: 10px
+  .image
+    margin: 10px 0 10px 0
+  h5
+    text-transform: none
+    font-size: 20px
+    line-height: 20px
+
+ul.stories
+  margin-left: -10px
+  margin-right: -10px
+  +clearfix
+  position: relative
+
+.stories_outer_wrapper
+  width: 940px
+  height: 620px
+  overflow: hidden
+
+.stories_inner_wrapper
+  position: relative
+  .stories
+    position: absolute
+    width: 940px
+
+.more_stories_content
+  margin: 0 -10px
+.center
+  .more_stories_content
+    width: 480px
+.three
+  .more_stories_content
+    width: 240px
+
+.credit
+  margin: 0 0 10px 0

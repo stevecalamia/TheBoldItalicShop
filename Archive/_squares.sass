@@ -1,0 +1,52 @@
+.square_edit
+  :margin 10px 0 20px 0
+  input
+    width: 237px
+
+.square
+  width: 298px
+  height: 298px
+  border: 1px solid #808080
+
+  a
+    color: inherit
+    &:hover
+      text-decoration: none
+
+  img
+    width: 100%
+    display: block
+
+  .type, .title, .subtitle
+    padding: 0 10px 0 10px
+
+  .type
+    padding-top: 7px
+    padding-bottom: 6px
+    font-size: 11px
+    letter-spacing: 1px
+    text-transform: uppercase
+    font-weight: light
+    text-rendering: optimizeLegibility
+    padding-bottom: 3px
+    margin-bottom: 3px
+    color: $ember_dark_gray
+
+  em, p, .price
+    font-gamily: Georgia, serif
+    font-size: 14px
+    font-weight: normal
+
+  .title
+    font-size: 20px
+    font-weight: 600
+    line-height: 20px
+    border-bottom: none
+    em
+      font-size: 18px
+
+  .subtitle
+    font-weight: 200
+    font-size: 18px
+    padding-top: 3px
+    text-transform: uppercase

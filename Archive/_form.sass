@@ -1,0 +1,53 @@
+$input_padding_size: 2
+$input_border_size: 1
+textarea, input[type=text], input[type=password]
+  font-family: $body_font_family
+  font-size: 14px
+  padding: "#{$input_padding_size}px"
+  border: "#{$input_border_size}px" solid $ember_medium_gray
+
+=input-width($n, $cols, $gutter_width: $ninesixty_gutter_width + ($input_padding_size * 2) + ($input_border_size * 2))
+  +grid-width($n, $cols, $gutter_width)
+
+form
+  .saving
+    line-height: 31px
+    height: 31px
+
+
+.gray_form
+  background: $ember_extra_light_gray
+  h4
+    margin: 10px 10px 0 10px
+  input[type="text"], input[type = "password"]
+    width: 220px - 6px - 20px
+  input, label
+    margin: 10px
+  input[type="checkbox"]
+    float: left
+  button
+    margin: 8px 10px 16px 0
+    float: right
+  p, ul
+    overflow: hidden
+    padding-left: 10px
+  button
+    margin-right: 39px
+
+.fieldWithErrors
+  border-color: $ember_red !important
+input[type="checkbox"].fieldWithErrors
+  + p:before
+    content: "\00BB"
+    color: $ember_red
+
+#errorExplanation
+  h4
+    color: $ember_red
+  li
+    font-variant: normal
+    font-size: 11px
+    margin-bottom: 2px
+    list-style-type: square
+    margin-left: 14px
+

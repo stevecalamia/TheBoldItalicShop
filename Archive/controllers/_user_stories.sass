@@ -1,0 +1,191 @@
+body.user_stories
+  .hero_video
+    margin: 0 0 10px -20px
+    iframe
+      border: none 0
+
+  .hero .byline
+    display: inline-block
+    font:
+      family: Georgia
+      size: 18px
+    line-height: 20px
+    margin: 10px 0 20px 0
+    .author
+      a
+        font-style: italic
+    .credit
+      font-size: 13px
+
+  .article
+    margin-bottom: 30px
+    +grid(9,12)
+    +alpha
+    p
+      line-height: 19px
+
+    .credits
+      +grid(3,12)
+      +alpha
+      margin-bottom: 6px
+      font-size: 12px
+
+  .copy, .hero .byline, .colors
+    +clearfix
+    ul li
+      margin-left: 2em
+      margin-bottom: 1em
+      list-style-type: disc
+
+  .hero .byline
+    overflow: visible
+
+  .colors
+    margin-bottom: 10px
+
+  input#story_title
+    font-size: 48px
+    padding: 5px
+    width: 680px
+
+  .image
+    &.right
+      float: right
+    &.left
+      float: left
+
+  #clip_results
+    li
+      color: #535353
+  .wide_hero
+    width: 980px
+    position: absolute
+    left: -$ninesixty_gutter_width
+    top: 0
+    z-index: -1
+
+  .share
+    +grid(3,12)
+    +alpha
+    img
+      vertical-align: top
+
+  .more_stories_content
+    width: 720px
+
+  .more_stories
+    clear: both
+
+  .embedded_video
+    background: #EEE image_url("playButton32.png") no-repeat center center
+
+  .published_on
+    margin-top: 4px
+    margin-bottom: 4px
+
+body.user_stories.edit_page
+  .errorExplanation
+    h2
+      color: $ember_red
+
+  .floating.button
+    float: right
+
+  .suppress_byline
+    margin: 0 0 10px 0
+
+  .author_and_byline
+    width: 100%
+    .credits_form
+      font-size: 12px
+    .author, .byline, .view, .view .rendered
+      display: inline
+
+  .summary_image_form, .featured_image_form, .hero_image_form, .background_image_form
+    +clearfix
+    margin: 20px 0
+    .the_image
+      +grid(3,12)
+      +omega
+    .instructions
+      +grid(6,12)
+      +alpha
+
+  .hero_image_style_form
+    .hero_image_style_form_legend
+      float: left
+      font-weight: bold
+    .hero_image_style_fields
+      float: left
+      .hero_image_wide_style_fields
+        .hero_image_wide_style_options_fields
+          padding-left: 50px
+
+  textarea#story_hero_video, textarea#story_featured_video
+    width: 99%
+
+body.user_stories.show_page
+  .copy
+    > div
+      min-height: 1px
+  .content
+    +grid(9,12)
+    +alpha
+
+  .filed_under
+    li
+      list-style: none
+      margin: 10px 0
+      font-size: 15px
+
+  .simplified_story_summaries
+    margin-bottom: 20px
+    .title
+      font-size: 18px
+      font-weight: 600
+
+  .credits
+    font-size: 12px
+    .credit
+      h4
+        font-size: 20px
+        margin-bottom: 3px
+        padding: 0
+        border: none
+      a
+        color: inherit
+      .role
+        font-size: 14px
+
+#editorbar
+  .right_content
+    float: right
+
+#email_popup
+  color: $ember_black
+  form
+    font-size: 10pt
+    table
+      width: 440px
+      margin-left: 12px
+    textarea
+      width: 214px
+  .sending
+    float: right
+  .results
+    color: $ember_mustard
+  .story_summary
+    margin-top: 8px
+    border-top: 1px solid $ember_dark_gray
+    width: 440px
+    height: auto
+    h5
+      padding-top: 8px
+    .image
+      float: right
+      margin: 10px 0 5px
+    .copy
+      display: block
+      margin-right: 10px
+      +small_text
+      color: $ember_dark_gray
