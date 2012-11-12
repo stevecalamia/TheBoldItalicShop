@@ -12,6 +12,14 @@
   </section>
   {% endif %}
 
+  {% if settings.show_widget_linklist1 %}
+  {% assign show_title = settings.show_widget_title_linklist1 %}
+  {% assign position = "first" %}
+    <!-- Link List Widget #1 -->
+    {% include 'widget-linklist' with settings.widget_linklist1 %}
+  {% assign position = "" %}
+  {% endif %}
+
   {% if settings.show_allcollections_widget %}
   <!-- Widget: list all collections -->
   <div class="widget widget-linklist" id="widget-allcollections">
@@ -48,11 +56,6 @@
       </ul>
     </div>    
   </div><!-- /.widget -->
-  {% endif %}
-
-  {% if settings.show_widget_linklist1 %}
-    <!-- Link List Widget #1 -->
-    {% include 'widget-linklist' with settings.widget_linklist1 %}
   {% endif %}
 
   {% if settings.show_widget_linklist2 %}

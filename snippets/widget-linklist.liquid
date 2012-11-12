@@ -1,9 +1,11 @@
 {% assign list = linklists.[widget-linklist] %}
 
-<div class="widget widget-linklist">
+<div class="widget widget-linklist {{ position }}">
+{% if show_title %}
   <div class="widget-header">
     <h3>{{ list.title | escape }}</h3>
   </div>
+  {% endif %}
   <div class="widget-content">
     <ul>
     {% for link in list.links %}

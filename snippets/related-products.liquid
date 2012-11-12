@@ -12,11 +12,11 @@
 {% endfor %}
 {% endif %}
 
-{% if collection %}
+{% if collection.all_products_count > 1 %}
   <section class="diagonal-divider clearfix">
     {% unless settings.productspg_featured_collection_heading == blank %}
     <header class="section-details clearfix">
-      <h1 class="section-title">{{ settings.productspg_featured_collection_heading | link_to: collection.url }}</h1>
+      <h1 class="section-title">{{ settings.productspg_featured_collection_heading | append: " " | append: collection.title | link_to: collection.url }}</h1>
     </header> 
     {% endunless %}
     <ul class="product-grid clearfix">
@@ -26,7 +26,7 @@
        {% assign current_product_found = true %}
     {% else %}
        {% unless current_product_found == false and forloop.last %}
-       <li{% cycle 'related': '', '', '', ' class="last-in-row"' %}>
+       <li class="{% cycle 'related': 'first', 'second' %}">
          <div class="product-grid-item">
             <a href="{{ prod.url | within: collection }}" class="product-link" title="{{ prod.featured_image.alt | escape }}">
                 <span class="product-price">
@@ -47,5 +47,7 @@
     {% endif %}
     {% endfor %}
     </ul>
+    <!--
+    -->
   </section>
 {% endif %}

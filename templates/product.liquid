@@ -2,72 +2,13 @@
 
   <div id="product" class="clearfix content">
 
-    <div id="product-information">
-
-      <p id="add-to-cart-msg"></p>
-
-      <div id="product-header" class="diagonal-divider clearfix">
-
-        <div id="product-header-title">
-          <h1 id="product-title">{{ product.title }}</h1>
-          <h2>{{ product.type }}</h2>
-          {% if settings.show_vendor %}<h2 id="product-vendor">{{ product.vendor | link_to_vendor }}</h2>{% endif %}
-        </div>
-
-        {% if product.available %}
-          <form action="/cart/add" method="post" class="variants" id="product-actions" enctype="multipart/form-data">
-            <div class="options clearfix">  
-
-              <div class="variants-wrapper clearfix {% if product.variants.size == 1 %}visuallyhidden{% endif %}"> 
-                <select id="product-select" name="id">
-                  {% for variant in product.variants %}
-                  <option value="{{ variant.id }}">{{ variant.title | escape }} - {{ variant.price | money }}</option>
-                  {% endfor %}
-                </select>
-              </div>            
-                
-              <div id="purchase">
-                <p class="price"></p>                                 
-                <input class="btn" type="submit" name="add" id="add-to-cart" value="Add to Cart" />
-              </div>
-
-            </div><!-- /.options -->
-          </form>
-
-        {% else %}
-          <div id="product-actions" class="sold-out">
-            <div id="purchase">
-              <p class="price">Sold out.</p>      
-            </div>
-          </div>      
-        {% endif %}
-      </div><!-- /#product-header -->
-
-      
-      <div class="description" style="width:100%;">
-        {{ product.description }}
-        {% include 'social-sharing' %} 
-      </div> 
-      <div class="clearfix" style="margin:45px 0 0">
-      {% if collection %}            
-      {% if collection.previous_product %}
-         {{ '« Previous Product' | link_to: collection.previous_product }}
-      {% endif %}
-      {% if collection.next_product %}
-        {% if collection.previous_product %} | {% endif %}
-        {{ 'Next Product »' | link_to: collection.next_product }}
-      {% endif %}
-   {% endif %}
-</div>
-    </div><!-- /#product-information -->
-    
     <div id="product-gallery"{% if settings.main_image_display == 'Zoom-in' %} class="zoom-in"{% endif %}>
 
       <div id="active-wrapper">
         {% if settings.main_image_display == 'Lightbox' %}
         <a href="{{ product.featured_image | product_img_url: 'original' }}" title="{{ product.featured_image.alt | escape }}" rel="fancybox">
         {% endif %}     
-          <img style="max-width:303px" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape }}" id="large-thumb" />
+          <img style="width:620px" src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.title | escape }}" id="large-thumb" />
         {% if settings.main_image_display == 'Lightbox' %}
         </a>
         {% endif %}
@@ -87,6 +28,54 @@
       
     </div><!-- /#product-gallery -->
 
+    <div id="product-information">
+
+      <p id="add-to-cart-msg"></p>
+
+      <div id="product-header" class="diagonal-divider clearfix">
+
+        <div id="product-header-title">
+          <h1 id="product-title">{{ product.title }}</h1>
+          {% if settings.show_vendor %}<h2 id="product-vendor">{{ product.vendor | link_to_vendor }}</h2>{% endif %}
+        </div>
+
+        {% if product.available %}
+          <form action="/cart/add" method="post" class="variants" id="product-actions" enctype="multipart/form-data">
+            <div class="options clearfix">  
+
+              <div id="purchase">
+                <p class="price"></p>                                 
+                <input class="btn" type="submit" name="add" id="add-to-cart" value="Add to Cart" />
+              </div>
+
+              <div class="variants-wrapper clearfix {% if product.variants.size == 1 %}visuallyhidden{% endif %}"> 
+                <select id="product-select" name="id">
+                  {% for variant in product.variants %}
+                  <option value="{{ variant.id }}">{{ variant.title | escape }} - {{ variant.price | money }}</option>
+                  {% endfor %}
+                </select>
+              </div>            
+
+            </div><!-- /.options -->
+          </form>
+
+        {% else %}
+          <div id="product-actions" class="sold-out">
+            <div id="purchase">
+              <p class="price">Sold out.</p>      
+            </div>
+          </div>      
+        {% endif %}
+      </div><!-- /#product-header -->
+
+      
+      <div class="description">
+        {{ product.description }}
+        {% include 'social-sharing' %} 
+      </div>            
+
+    </div><!-- /#product-information -->
+    
   </div><!-- /#product -->
 
   {% if settings.productspg_related_products %}
@@ -121,3 +110,4 @@
   {% endif %}
 
 </div><!-- /#col-main -->
+
