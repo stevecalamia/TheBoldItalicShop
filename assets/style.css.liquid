@@ -103,7 +103,10 @@ body { font: {{settings.general_font_size}}/1.231 {{settings.general_font}}; *fo
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
-html { overflow-y: scroll; }
+html { 
+    overflow-y: scroll; 
+    overflow-x: hidden;
+}
 ol { list-style-type: decimal; }
 p { margin: 0 0 1em 0; }
 nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
@@ -1838,4 +1841,9 @@ a.btn:hover{
 .error span {
   line-height: 2;
   color: red;
+}
+
+/* GrowCart */
+#growcart {
+    font-family: {{ settings.header_font }};
 }
