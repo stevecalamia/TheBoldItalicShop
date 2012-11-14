@@ -49,9 +49,41 @@
   {% endif %}
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js' | script_tag }}
+  
+  <!-- All scripts should be hosted on Shopify and should be in individual files, not inline -->
+  {{ "porthole.min.js" | asset_url | script_tag }}
+  <script>
+  var windowProxy;  
+  $(document).ready(function () {
+    windowProxy = new Porthole.WindowProxy('http://demo.thebolditalic.com/porthole_proxy.html');    
+    postHeight(windowProxy);
+    $('a').click(function(){
+        postHeight(windowProxy); 
+        $(this).scrollTop(0);
+        return true;
+    });
+  });
+  function postHeight(proxy) {
+    var height = parseInt($(".wrapper").css("height"))+100;
+    proxy.post({'height': height});
+    return true;
+  }
+  </script>
 
   {{ content_for_header }}
 
+<!-- Added by Lexity. DO NOT REMOVE/EDIT -->
+<meta name="google-site-verification" content="MfT3T1u_VHbY1QHrfhk7aNQVANybsbfsTA2QIT_5o2s" />
+<script type="text/javascript">
+(function (d, w) {
+  var x = d.getElementsByTagName('SCRIPT')[0], g = d.createElement('SCRIPT'); 
+  g.type = 'text/javascript';
+  g.async = true;
+  g.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  x.parentNode.insertBefore(g, x);
+}(document, window));
+</script>
+<!-- End of addition by Lexity. DO NOT REMOVE/EDIT -->
 </head>
 
 <body class="{% if customer %}customer-logged-in {% endif %}template{{ template | split: '.' | first | camelize }}">
