@@ -129,7 +129,7 @@ $(document).ready(UTIL.loadEvents);
 /**
  * Balances the height of rows of products/collections.
  * Finds the tallest item in a row, makes each <li> in that row as tall as the tallest.
- */
+
 $.fn.balanceRowHeight = function(numPerRow) {
   var nPerRow = numPerRow || 4;
   var nItems = $(this).find('li').length;
@@ -156,7 +156,7 @@ $.fn.balanceRowHeight = function(numPerRow) {
 
 /**
  * Balance product grid height after all images have loaded.
- */
+
 $(window).load( function(){
   if( $('body').hasClass('templateIndex') ){
     // homepage has two grids, needs a bit of special treatment:
@@ -167,7 +167,7 @@ $(window).load( function(){
     $('.product-grid').balanceRowHeight(4);
   }
 });
-
+ */
 
 
 /**

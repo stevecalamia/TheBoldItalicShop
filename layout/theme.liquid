@@ -51,23 +51,11 @@
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js' | script_tag }}
   
   <!-- All scripts should be hosted on Shopify and should be in individual files, not inline -->
-  {{ "porthole.min.js" | asset_url | script_tag }}
   <script>
-  var windowProxy;  
-  $(document).ready(function () {
-    windowProxy = new Porthole.WindowProxy('http://demo.thebolditalic.com/porthole_proxy.html');    
-    postHeight(windowProxy);
-    $('a').click(function(){
-        postHeight(windowProxy); 
-        $(this).scrollTop(0);
-        return true;
-    });
+  document.domain = 'thebolditalic.com';
+  $(document).ready(function(){
+      $(parent.frames["shopify_iframe"]).height($(".wrapper").height()).css("border","0");
   });
-  function postHeight(proxy) {
-    var height = parseInt($(".wrapper").css("height"))+100;
-    proxy.post({'height': height});
-    return true;
-  }
   </script>
 
   {{ content_for_header }}
@@ -84,6 +72,121 @@
 }(document, window));
 </script>
 <!-- End of addition by Lexity. DO NOT REMOVE/EDIT -->
+
+
+
+  <script language="JavaScript">
+    HoverNav = {
+
+       shown: false,
+       overFloatingNav: false,
+       overHoverNav: false,
+       originallySelectedColumn: null,
+
+       init:function () {
+           var self = this;
+
+           if($('#hoverNav').length == 0){
+               return;
+           }
+
+           $('#floatingNav .two').hover(
+               function() {
+                   self.overFloatingNav = true;
+                   self._onHoverStateChange();
+               },
+               function() {
+                   self.overFloatingNav = false;
+                   self._onHoverStateChange();
+               }
+           );
+
+           $('#hoverNav').hover(
+               function() {
+                   self.overHoverNav = true;
+                   self._onHoverStateChange();
+               },
+               function() {
+                   self.overHoverNav = false;
+                   self._onHoverStateChange();
+               }
+           );
+
+           this.originallySelectedColumn = $('.two.selected');
+
+           this._addHoverBehaviorToColumn('read');
+           this._addHoverBehaviorToColumn('do');
+           this._addHoverBehaviorToColumn('shop');
+
+       },
+
+       _addHoverBehaviorToColumn: function(column) {
+           var self = this;
+           $('.' + column + '_header, .' + column + '_links').hover(
+               function(){
+                   self.originallySelectedColumn.removeClass('selected');
+                   $('.' + column + '_header, .' + column + '_links').addClass('selected');
+               },
+               function(){
+                   $('.' + column + '_header, .' + column + '_links').removeClass('selected');
+               }
+           );
+       },
+
+       _onHoverStateChange:function () {
+           var self = this;
+           var f = $.debounce(function () {
+               if(self.overHoverNav || self.overFloatingNav) {
+                   if(!self.shown) {
+                       self._animateIn.call(self);
+                   }
+               } else if (!self.overHoverNav && !self.overFloatingNav) {
+                   if(self.shown) {
+                       self.originallySelectedColumn.addClass('selected');
+                       self._animateOut();
+                   }
+               }
+           }, 300)
+           f();
+       },
+
+       _animateIn:function () {
+           if(this.shown || this.hidden) {
+               return false;
+           }
+           this.shown = true;
+           var f = $('#hoverNav');
+           f.css('top', '-200px');
+           f.show();
+           f.animate({
+               top: 0
+           }, 250, function () {
+               // Animation complete.
+               f.css('top', 0);
+           });
+       },
+
+       _animateOut:function () {
+           if(!this.shown) {
+               return false;
+           }
+           this.shown = false;
+           var f = $('#hoverNav');
+           f.animate({
+               top:'-200px'
+           }, 50, function () {
+               f.hide();
+               f.css('top', '-200px');
+           });
+       }
+    };
+  </script>
+  <script language="JavaScript">
+  $(document).ready(function() {
+    HoverNav.init();
+  });
+  </script>
+
 </head>
 
 <body class="{% if customer %}customer-logged-in {% endif %}template{{ template | split: '.' | first | camelize }}">
@@ -92,6 +195,57 @@
   <div class="wrapper">
 
     <!-- Header -->
+<div id='nav-wrapper'>
+        <div class='floatingNav' id='floatingNav'>
+            <li class='three left'>
+                <a href="http://www.thebolditalic.com"><img alt="Logo_med_black_no_sf_no_beta" src="http://d2pepr9bod9pvx.cloudfront.net/assets/logo_med_black_no_sf_no_beta-fe9005a5dccaee31bad018fa6737f3a3.png" /></a></li>
+            <li class='two widen read_header'>
+                <div class='selection_indicator'>
+                    <a href="http://www.thebolditalic.com/read"><h2>Read</h2> Tales From San Francisco </a></div>
+            </li>
+            <li class='two do_header'>
+                <div class='selection_indicator'>
+                    <a href="http://www.thebolditalic.com/events"><h2>Do</h2> A Bold Events Calendar </a></div>
+            </li>
+            <li class='two shop_header selected'>
+                <div class='selection_indicator'>
+                    <a href="http://shop.thebolditalic.com"><h2>Shop</h2> Artisans We Love </a></div>
+            </li>
+            <div class='three right' id='floating_nav_account'></div>
+        </div>
+        <div id='hoverNav' style='top: -200px; display: none;'>
+            <div class='left'>
+                <p>
+                    The Bold Italic is an online magazine, shop, and events hub in San Francisco. We celebrate the
+                    free-wheeling spirit of the city.
+                </p>
+                <a href="/about" class="punchy_link">More About Us</a>
+                <a href="mailto:info@thebolditalic.com" class="punchy_link">Collaborate With Us</a>
+            </div>
+            <div class='two widen read_links'>
+                <a href="/features">Features</a>
+                <a href="/dispatches">Dispatches</a>
+                <a href="/columns">Columns</a>
+            </div>
+            <div class='two do_links'>
+                <a href="/events?selection=tbi_events">Our Events</a>
+                <a href="/events?selection=this_week">Events This Week</a>
+                <a href="/events?selection=this_weekend">Events This weekend</a>
+                <a  href="mailto:info@thebolditalic.com?subject=The%20Bold%20Italic%20Event%20Submission&amp;body=Please%20provide%20the%20following%20details%20of%20your%20event.%20Sorry%20but%20we%20get%20a%20lot%20of%20event%20submissions%20and%20can't%20promise%20to%20use%20or%20respond%20to%20each%20one.%0A%0AEvent%20Title:%0AEvent%20Host%20Name:%0AStreet%20Address%20of%20Event:%0ADate%20of%20Event:%0AStart%20Time:%0AEnd%20Time:%0AURL%20to%20buy%20tickets:%0AFull%20description%20of%20the%20event%20and%20why%20our%20readers%20should%20be%20excited%20about%20it:%0A">Submit An Event</a>
+            </div>
+            <div class='two shop_links'>
+                <a href="http://thebolditalic.bigcartel.com/category/magazine">Our Magazine</a>
+                <a href="http://thebolditalic.bigcartel.com/products">Our Products</a>
+                <a href="http://thebolditalic.bigcartel.com">Collaborations</a>
+                <a href="http://thebolditalic.bigcartel.com">Custom Made</a>
+            </div>
+            <div class='three right' id='hover_nav_account'>
+            </div>
+            <div class='clear'></div>
+        </div>
+    </div>
+    <div class='floatingNav' id='floatingNav-push'></div>
+    
     <header id="top" class="clearfix">
 
       <h1 id="site-title">

@@ -92,3 +92,11 @@
   {% endif %}
 
 </div><!--/#col-main -->
+
+<!-- Begin code inserted by GrowCart -->
+<script type="text/javascript">
+    var growcart_shop_url = {{ shop.permanent_domain | json }}
+    var growcart_product_ids = {{cart.items|map:'to_liquid'|map:'product'|map:'to_liquid'|map:'id'|join:','|json}}
+</script>
+<div id="growcart"></div>
+<!-- End code inserted by GrowCart -->
