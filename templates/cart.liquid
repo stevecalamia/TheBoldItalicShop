@@ -8,6 +8,13 @@
     <p class="empty">Your shopping cart is empty. Check out our <a href="/collections/all">catalog</a> to see what's available.</p>
 
   {% else %}
+  <script language="javascript">
+  $(document).ready(function(){
+    if (self == top) {
+        document.getElementById("cartform").setAttribute("target","_self");
+    }
+  });
+  </script>
     <form action="/cart" method="post" id="cartform" class="clearfix" target="_blank">
 
       <table class="items">
@@ -53,9 +60,9 @@
                 {% endunless %}
               {% endfor %}
             </td>
-            <td>{{ item.price | money }}</td>
+            <td>{{ item.price | money_with_currency }}</td>
             <td> <input class="text quantity" type="text" size="4" id="updates_{{ item.id }}" name="updates[]" value="{{ item.quantity }}" class="replace" /> </td>
-            <td>{{ item.line_price | money }}</td>
+            <td>{{ item.line_price | money_with_currency }}</td>
             <td><a class="btn remove-from-cart" href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a></td>
           </tr>
           {% endfor %}
@@ -65,7 +72,7 @@
           <tr class="bottom-summary">
             <td colspan="3"></td>
             <td class="update-quantities"><input type="submit" id="update-cart" class="btn" name="update" value="Update quantities" /></td>
-            <td class="subtotal">{{ cart.total_price | money }}</td>
+            <td class="subtotal">{{ cart.total_price | money_with_currency }}</td>
             <td>&nbsp;</td>
           </tr>
         </tfoot>
