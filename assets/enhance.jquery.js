@@ -101,6 +101,9 @@
     };
     cache.push(image);
     swap(image);
+    if (self!=top) { //we're in an iframe, so resize the parent
+        growParent();
+    }
   }
 
 
