@@ -588,18 +588,25 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
   /* for ie6: */
   width: 100%;
   }
-.product-grid .product-information {
-  font-family: {{settings.header_font}};
+.product-grid .product-information { 
+  {%if settings.header_font == 'proxima_nova_cn_rgregular, arial, sans-serif' or settings.header_font == 'proxima_nova_cn_rgbold, arial, sans-serif' %}
+    font-family: proxima_nova_cn_rgbold, arial, sans-serif;
+    font-weight: normal;
+  {% else %}
+    font-family: {{settings.header_font}};
+  {% endif %}
   background: white;
   height: 110px;
-  font-weight: 600;
   font-size: 20px;
 }
 .product-grid .product-information a {
     padding: 23px 10px 0px 10px;
 }
 .product-grid .num-in-collection {
+    font-family: {{settings.header_font}};
     padding: 0px 10px;
+    color: #222;
+    text-transform: uppercase;
     }
 
 .product-photo{
@@ -680,6 +687,8 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
 #product-actions{
   padding: 4px 0 12px 0;
   overflow: hidden; height: 1%;
+  width: 228px;
+  float: right;
   }
 
 #purchase{
@@ -707,26 +716,33 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
 #product-header #product-header-title{
   float: left;
   width: 60%;
-  margin: 5px 0 16px 0;
+  margin: 10px 0 16px 0;
   }
 #product-title{
   margin: 0 0 5px 0;
   font-size: {{ settings.product_name_font_size }};
   font-style: {{ settings.product_name_font_style }};
-  }
+ {%if settings.header_font == 'proxima_nova_cn_rgregular, arial, sans-serif' or settings.header_font == 'proxima_nova_cn_rgbold, arial, sans-serif' %}
+    font-family: proxima_nova_cn_rgbold, arial, sans-serif;
+    font-weight: normal;
+ {% endif %}  
+ }
 #product-vendor{
-  font-size: 12px;
+  font-size: 21px;
   font-weight: normal;
   margin: 0;
   }
 #product-vendor a{
   text-decoration: none;
+  color: #222;
   }
-
+#product-vendor a:hover {
+  color: {{ settings.content_link_hover_colour }};
+}
 #product-actions select{
   padding: 3px;
   position: relative;
-  right: -119px;
+  min-width: 119px;
   }
 #product-actions .price{
   font-size: 18px;
@@ -735,7 +751,7 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
   text-align: right;
   position: relative;
   top: 6px;
-  right: 125px;
+  right: 129px;
   }
 #product-actions .price strong{
   color: {{ settings.product_price_colour }};
@@ -749,6 +765,7 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
 .variants-wrapper{
   text-align: right;
   margin: 0 0 8px 0;
+  height: 30px;
   }
 .selector-wrapper{
   margin: 0 0 8px 0 ;
@@ -778,6 +795,11 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
   margin: 0;
   float: left;
   }
+
+#product-information .description a {
+    text-decoration: underline;
+}
+
 
 /**
  * Zoomy product gallery, with thumbs
@@ -877,6 +899,9 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
   float: left;
   width: 700px;
   }
+.content.description a {
+    text-decoration: underline;
+}
 
 article{
   margin: 20px 0 45px 0;
@@ -1435,6 +1460,10 @@ col.checkout-delete{ width: 80px; }
   font-size: {{settings.widget_link_font_size | remove:"px" | minus: 2}}px;
 }
 
+.empty a {
+    text-decoration: underline;
+}
+
 
 
 /**
@@ -1665,8 +1694,12 @@ a.btn{
   padding: 5px 7px 0px;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
+{%if settings.header_font == 'proxima_nova_cn_rgregular, arial, sans-serif' or settings.header_font == 'proxima_nova_cn_rgbold, arial, sans-serif' %}
+    font-family: proxima_nova_cn_rgbold, arial, sans-serif;
+    font-weight: normal;
+{% else %}
   font-family: {{settings.header_font}};
+ {% endif %}
   font-size: {{settings.widget_link_font_size}};
   text-align: center;
   cursor: pointer;
@@ -1849,197 +1882,4 @@ a.btn:hover{
 }
 
 
-/* Navigation from TBI main site */
-#floatingNav-push {
-  height: 100px;
-  width: 100%; }
-
-#nav-wrapper {
-  position: fixed;
-  height: 80px;
-  width: 100%;
-  z-index: 100;
-  background-color: white;
-  border-bottom: 2px solid black;
-  left: 0px; }
-
-#hoverNav {
-  margin-top: 2px;
-  position: relative;
-  width: 940px;
-  padding: 15px 30px;
-  left: 50%;
-  margin-left: -500px;
-  border-bottom: 2px solid gray;
-  background-color: #e6e6e6; }
-  #hoverNav .two {
-    margin-top: -15px;
-    padding-top: 15px;
-    height: 140px; }
-  #hoverNav .selected a {
-    color: #c68f2b; }
-  #hoverNav a {
-    display: block;
-    margin: 7px 0 0 0;
-    color: inherit;
-    font-size: 16px; }
-    #hoverNav a.punchy_link {
-      font-size: 14px;
-      margin: 3px 0 0 0;
-      letter-spacing: 0;
-      color: #c68f2b;
-      font-weight: 600; }
-  #hoverNav .left {
-    float: left;
-    width: 190px;
-    margin-right: 21px; }
-
-#floatingNav .widen, #hoverNav .widen {
-  width: 150px; }
-
-#floatingNav .two {
-    float: left;
-    padding: 0 20px;
-}
-
-#floatingNav {
-  font-weight: 400;
-  font-size: 11px;
-  text-transform: uppercase;
-  height: 80px;
-  width: 980px;
-  padding: 0 20px;
-  z-index: 100;
-  background-color: white;
-  letter-spacing: 1px;
-  position: relative;
-  left: 50%;
-  margin-left: -510px; }
-  #floatingNav .right {
-    width: 240px; }
-  #floatingNav .selected .selection_indicator {
-    padding: 7px 0 14px 0;
-    border-color: #c98f08;
-    border-style: solid;
-    border-width: 4px 0 4px 0; }
-  #floatingNav .selection_indicator {
-    padding: 11px 0 10px 0; }
-  #floatingNav li {
-    overflow: hidden;
-    list-style: none;
-    margin-top: 20px; }
-  #floatingNav a {
-    color: inherit; }
-    #floatingNav a:hover {
-      text-decoration: none; }
-  #floatingNav h2 {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    margin: inherit;
-    margin-left: 0;
-    margin-bottom: 2px;
-    line-height: 18px;
-    letter-spacing: 1px; }
-  #floatingNav .account_functionality {
-    padding: 20px 0 2px 0; }
-    #floatingNav .account_functionality .first {
-      margin-right: 5px; }
-    #floatingNav .account_functionality .last {
-      margin-left: 5px; }
-    #floatingNav .account_functionality a {
-      display: inline;
-      text-transform: none; }
-      #floatingNav .account_functionality a:hover {
-        text-decoration: underline; }
-  #floatingNav .search {
-    float: right;
-    margin: 0; }
-    #floatingNav .search input {
-      width: 198px;
-      margin: 0;
-      padding: 5px 10px 4px 30px; }
-
-    h1, h2, h3, h4, h5, button .btn2, .skinned .btn2 {
-      font-family: "proxima_nova_cn_rgregular";
-      letter-spacing: 1px; }
-
-    h2.italic, h3.italic {
-      font-family: inherit; }
-
-    button .btn2, .skinned .btn2 {
-      font-weight: regular; }
-
-    .event_type_label {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    #floatingNav {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    #hoverNav a {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .square .type, .square .title, .square .subtitle, .square .date, .featured_object .type, .featured_object .title, .featured_object .subtitle, .featured_object .date, .event .type, .event .title, .event .subtitle, .event .date, .events .type, .events .title, .events .subtitle, .events .date, .expanded_event_summary .type, .expanded_event_summary .title, .expanded_event_summary .subtitle, .expanded_event_summary .date, .store_promotion_summary .type, .store_promotion_summary .title, .store_promotion_summary .subtitle, .store_promotion_summary .date, .collection .type, .collection .title, .collection .subtitle, .collection .date, .simplified_story_summaries .type, .simplified_story_summaries .title, .simplified_story_summaries .subtitle, .simplified_story_summaries .date, #flyout .type, #flyout .title, #flyout .subtitle, #flyout .date {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .search a {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .punchy_link {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .daymonth, .day_of_month, table.calendar th.current {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .blog_post_summary {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .icalendar p {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    a#more_events {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    #flyout a.show_more {
-      font-family: "proxima_nova_cn_rgregular"; }
-    #flyout .dismiss {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .events_filter li {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .email_subscribe a {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .connect a {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .event_times .date {
-      font-family: Georgia, serif; }
-
-    .comments .form a.button {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .row.bottom a {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    .filed_under li {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    body.dispatches .next .link {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    body.stories.index_page .neighborhoods {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    body.read .column_type_summary .title {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    body.columns h5 {
-      font-family: "proxima_nova_cn_rgregular"; }
-
-    #footer {
-      font-family: "proxima_nova_cn_rgregular"; }
-      #footer .feedback a {
-        font-family: "proxima_nova_cn_rgregular"; }
 
