@@ -110,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold; 
   margin: 0 0 .5em 0;
   text-shadow: none !important;
+  font-family: {{ settings.header_font }};
   }
 
 a { color: {{ settings.content_link_colour }}; }
@@ -165,6 +166,7 @@ a:hover { color: {{ settings.content_link_hover_colour}} }
   margin: 0 0 12px 0;
   padding: 0 0 8px 0;
   border-bottom: dotted 1px {{ settings.content_secondary_colour }};  
+  font-size: 18px !important;
   }
   
   
@@ -412,7 +414,9 @@ a:hover { color: {{ settings.content_link_hover_colour}} }
   padding: 5px 10px 4px 10px;
   text-decoration: none;  
   font-weight: bold;
-  font-family: {{settings.general_font}};
+  font-family: {{settings.header_font}};
+  font-size: 18px;
+  text-transform: uppercase;
   text-align: center;
   cursor: pointer;
   border: solid 1px {{settings.btn_hover_colour}};
