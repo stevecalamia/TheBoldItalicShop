@@ -631,22 +631,11 @@ body{ border-top: solid 4px {{settings.cart_bg_colour}}; }
   }
 
 .product-price{
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: auto;
-  padding: 4px 8px;
-  text-align: right;
-  font-weight: bold;
-  color: {{ settings.grid_price_colour }};
-  filter: alpha(opacity=85); /* internet explorer */
-  -moz-opacity: 0.85;       /* mozilla, netscape */
-  opacity: 0.85;           /* fx, safari, opera */
-  background: {{ settings.grid_price_background_colour }};
-  -webkit-border-radius: 4px 0 0 0;
-  -moz-border-radius: 4px 0 0 0;
-  border-radius: 4px 0 0 0;
+    font-family: {{settings.header_font}};
+    font-size: 85%;
+    padding: 0px 10px;
+    color: #222;
+    text-transform: uppercase;
   }
 #featured-grid .product-price.sale, .sale {
   background-color: {{ settings.sale_background_color }};
